@@ -1,0 +1,214 @@
+*{
+    margin:0;
+    padding:0;
+}
+html,body{
+    margin-top: 0;
+    padding-top: 0;
+    width:100%;
+    height:100%;
+    background-color: white;
+}
+.top{
+    width:100%;
+    height:60px;
+    background-color: #19acdc;
+}
+.top h1{
+    font-size: 25px;
+    font-family: 华文细黑;
+    color: white;
+    width:200px;
+    height:60px;
+    line-height: 60px;
+    margin-left: 20px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.top ul{
+    position: absolute;
+    top:30px;
+    left:300px;
+}
+.top li{
+    list-style: none;
+    float: left;
+    width:100px;
+    margin-left:50px;
+    text-align: center;
+}
+.top a:link,
+.top a:visited{
+    text-decoration: none;
+    font-size: 18px;
+    font-family: 华文细黑;
+    color: white;
+}
+.top a:hover,
+.top a:active{
+    text-decoration: none;
+    font-size: 18px;
+    font-family: 华文细黑;
+    color: yellowgreen;
+}
+.active{
+    border-bottom: 5px solid #2dcedb;
+}
+.top span{
+    color: white;
+    font-size: 15px;
+    font-family: 华文细黑;
+    position: absolute;
+    top: 40px;
+    left:1200px;
+}
+/*top end*/
+
+/*modal start*/
+.modal-dialog{
+    margin-top: 10%!important;
+}
+/*modal-header*/
+.btn-close{
+    background-color: red;
+    width:30px;
+    height:30px;
+    border-radius:50% ;
+    color: white;
+    border: none;
+    position: absolute;
+    top:-7px;
+    right:-7px;
+    outline: none;
+}
+.btn-close span{
+    font-size: 30px;
+    line-height: 30px;
+}
+.modal-title{
+    text-align: center;
+    font-weight: bold;
+    font-family: 华文细黑;
+}
+/*.modal-header .fa-times-circle{
+    position: absolute;
+    top:0;
+    left:560px;
+    font-size: 30px;
+    color: red;
+}*/
+.modal-title .fa-pencil{
+    color: #1694b0;
+    font-size: 15px;
+    margin-left: 10px;
+}
+/*modal body*/
+.device-status,.console{
+    margin-left:20px;
+}
+.title{
+    width:120px;
+    color: rgba(44, 182, 223, 0.79);
+    font-family: 华文细黑;
+    font-weight: bold;
+}
+.title i{
+    margin-right: 10px;
+}
+.temperature,.model,.switch,
+.console-temperature,.console-air,.console-switch{
+    float: left;
+}
+.circle{
+    width:100px;
+    height:100px;
+    border-radius: 50%;
+}
+.temperature .circle{
+    background-color: #2aabd2;
+}
+.model .circle{
+    background-color: rgba(253, 0, 0, 0.43);
+    margin:0 100px;
+}
+.switch .circle{
+    background-color: #45c0a8;
+}
+.circle i{
+    font-size: 50px;
+    width:50px;
+    height:50px;
+    margin: 20px 0 0 25px;
+    text-align: center;
+    color: white;
+}
+.circle p{
+    color:white;
+    width:80px;
+    height:20px;
+    margin:5px auto;
+    text-align: center;
+    font-family: 华文细黑;
+    font-weight: bold;
+}
+.device-status-text{
+    width:90px;
+    height:30px;
+    line-height: 30px;
+    text-align: center;
+    margin-left: 10px;
+    font-size: 10px;
+    font-family: 华文细黑;
+}
+.mid{
+    margin:0 110px;
+}
+
+.console-temperature .circle{
+    background-color: #d9d900;
+}
+.console-air .circle{
+    background-color: #81d29c;
+    margin:0 100px;
+}
+.console-switch .circle{
+    background-color: #f06e57;
+}
+.console-temperature-text,.console-air-text,.console-switch-text{
+    border: 1px solid #2aabd2;
+    color: #2aabd2;
+    margin-top: 5px;
+}
+.console-temperature-text p,
+.console-temperature-text i{
+    width:30px;
+    text-align: center;
+}
+.console-temperature-text p{
+    border-left: 1px solid #2aabd2;
+    border-right: 1px solid #2aabd2;
+    display: inline;
+    padding: 0 7px;
+}
+.console-air-text{
+    margin-left:100px;
+}
+.console-air-text p{
+    border-right: 1px solid #2aabd2;
+    display: inline;
+    width:90px;
+    padding:0 10px;
+    text-align: center;
+}
+.console-air-text i{
+    width:20px;
+    text-align: center;
+}
+.console-switch-text i{
+    width:20px;
+    margin-left:10px;
+}
+/*modal-footer*/
+.modal-footer{
+    border-top: none!important;
+}

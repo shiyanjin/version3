@@ -1,0 +1,14 @@
+﻿[
+  {"name" : "办公室一" ,"position":"室内机","message":"失去连接（断网or断电）"},
+  {"name":"会议室","position":"室内机","message":"失去连接（断网or断电）"},
+  {"name":"多功能厅一","position":"室内机","message":"失去连接（断网or断电）"},
+  {"name":"大办公室","position":"室内机","message":"失去连接（断网or断电）"},
+  {"name":"小办公室","position":"室内机","message":"失去连接（断网or断电）"},
+  {"name":"主会议室","position":"室外机","message":"失去连接（断网or断电）"},
+  {"name":"多功能厅二","position":"室外机","message":"获取不到信息"},
+  {"name":"会议室二","position":"室外机","message":"获取不到信息"},
+  {"name":"办公室二","position":"室外机","message":"获取不到信息"},
+  {"name":"会议室三","position":"室外机","message":"获取不到信息"},
+  {"name":"办公室三","position":"室外机","message":"获取不到信息"}
+]	
+

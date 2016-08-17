@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>故障信息</title>
+    <link type="text/css" rel="stylesheet" href="../css/troubleMessage.css">
+    <link type="text/css" rel="stylesheet" href="../dependency/bootstrap/css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="../dependency/font-awesome-4.5.0/css/font-awesome.min.css">
+    <script src="../dependency/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../dependency/jquery/jquery.min.js"></script>
+</head>
+<body>
+    <!--管理系统-->
+    <div class="top" id="top">
+        <h1>中央空调管理系统</h1>
+        <ul>
+            <li><a href="deviceControlBox2.html">设备监控</a></li>
+            <li class="active"><a href="troubleMessage.html">故障信息</a></li>
+            <li><a href="#">账户管理</a></li>
+        </ul>
+        <span>admin, 退出</span>
+    </div>
+    <!--故障信息表-->
+    <div class="table-box">
+        <div class="trouble-count">总故障数：<span>24</span></div>
+        <table class="table-bordered table-striped">
+            <tr>
+                <th>机器名<i class="fa fa-filter"></i></th>
+                <th>机器位置<i class="fa fa-filter"></i></th>
+                <th>故障描述</th>
+            </tr>
+            <tr>
+                <td>办公室一</td>
+                <td>室内机</td>
+                <td>失去连接（断网or断电）</td>
+            </tr>
+            <tr>
+                <td>会议室</td>
+                <td>室内机</td>
+                <td>失去连接（断网or断电）</td>
+            </tr>
+            <tr>
+                <td>多功能厅一</td>
+                <td>室内机</td>
+                <td>失去连接（断网or断电）</td>
+            </tr>
+            <tr>
+                <td>小办公室</td>
+                <td>室内机</td>
+                <td>失去连接（断网or断电）</td>
+            </tr>
+            <tr>
+                <td>小会议室</td>
+                <td>室内机</td>
+                <td>失去连接（断网or断电）</td>
+            </tr>
+            <tr>
+                <td>大会议室</td>
+                <td>室内机</td>
+                <td>获取不到信息</td>
+            </tr>
+            <tr>
+                <td>小多功能厅</td>
+                <td>室内外机</td>
+                <td>获取不到信息</td>
+            </tr>
+            <tr>
+                <td>主会议室</td>
+                <td>室外机</td>
+                <td>获取不到信息</td>
+            </tr>
+            <tr>
+                <td>办公室二</td>
+                <td>室外机</td>
+                <td>获取不到信息</td>
+            </tr>
+        </table>
+        <ul id="page">
+            <li class="text firstOrLast" id="first"><a href="#">首页</a></li>
+            <li class="text"><a href="#">上一页</a></li>
+            <li class="number active-page"><a href="#">1</a></li>
+            <li class="number"><a href="#">2</a></li>
+            <li class="number"><a href="#">3</a></li>
+            <li class="text"><a href="#">下一页</a></li>
+            <li class="text" id="last"><a href="#">尾页</a></li>
+        </ul>
+    </div>
+    <script src="../js/changeTop.js"></script>
+    <script src="../js/changePage.js"></script>
+    <script src="../js/showUserMessageTable.js"></script>
+</body>
+</html>

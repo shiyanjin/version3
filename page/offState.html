@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>设备监控-弹框-关机状态</title>
+    <link type="text/css" rel="stylesheet" href="../css/offState.css">
+    <link type="text/css" rel="stylesheet" href="../dependency/font-awesome-4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../dependency/bootstrap/css/bootstrap.min.css">
+    <script src="../dependency/jquery/jquery.min.js"></script>
+    <script src="../dependency/bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+<!--管理系统-->
+<div class="top" id="top">
+    <h1>中央空调管理系统</h1>
+    <ul>
+        <li class="active">
+            <a href="#" data-toggle="modal"
+               data-target="#myModal">设备监控</a>
+        </li>
+        <li><a href="#">故障信息</a></li>
+        <li><a href="#">账户管理</a></li>
+    </ul>
+    <span>admin, 退出</span>
+</div>
+<!--模态框Modal-->
+<div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="btn-close" data-dismiss="modal">
+                    <span>&times;</span>
+                </button>
+                <h4 class="modal-title">
+                    办公室一<i class="fa fa-pencil"></i>
+                </h4>
+            </div><!--modal-header-->
+
+            <div class="modal-body">
+                <div class="device-status">
+                    <p class="title">
+                        <i class="fa fa-circle"></i>设备管理
+                    </p>
+                    <div class="temperature">
+                        <div class="circle">
+                            <i class="fa fa-minus first"></i>
+                            <i class="fa fa-minus"></i>
+                        </div>
+                        <p>当前温度</p>
+                    </div>
+                    <div class="model">
+                        <div class="circle mid">
+                            <i class="fa fa-minus first"></i>
+                            <i class="fa fa-minus"></i>
+                        </div>
+                        <p class="mid">当前模式</p>
+                    </div>
+                    <div class="switch">
+                        <div class="circle power">
+                            <i class="fa fa-power-off"></i>
+                            <p>关</p>
+                        </div>
+                        <p>开关状态</p>
+                    </div>
+                </div><!--device-status-->
+
+                <div class="console">
+                    <p class="title"><i class="fa fa-circle"></i>控制台</p>
+                    <div class="console-temperature">
+                        <div class="circle">
+                            <i class="fa fa-minus first"></i>
+                            <i class="fa fa-minus"></i>
+                        </div>
+                        <div class="console-temperature-text">
+                            <i class="fa fa-minus icon"></i>
+                            <span><i class="fa fa-minus"></i>
+                                <i class="fa fa-minus"></i></span>
+                            <i class="fa fa-plus icon"></i>
+                        </div>
+                    </div>
+                    <div class="console-air">
+                        <div class="circle mid">
+                            <i class="fa fa-minus first"></i>
+                            <i class="fa fa-minus"></i>
+                        </div>
+                        <div class="console-air-text mid">
+                                <span><i class="fa fa-minus"></i>
+                                <i class="fa fa-minus"></i></span>
+                            <i class="fa fa-caret-down icon"></i>
+                        </div>
+                    </div>
+                    <div class="console-switch">
+                        <div class="circle power">
+                            <i class="fa fa-power-off"></i>
+                            <p>关</p>
+                        </div>
+                        <div class="console-switch-text">
+                            <i class="fa fa-circle-o icon"></i>开
+                            <i class="fa fa-dot-circle-o icon"></i>关
+                        </div>
+                    </div>
+                </div><!--console-->
+
+
+            </div><!--modal-body-->
+
+            <div class="modal-footer"></div><!--modal-footer-->
+        </div><!--modal-content-->
+    </div><!--modal-dialog-->
+</div><!--modal-->
+<script src="../js/changeTop.js"></script>
+<script src="../js/deviceControl.js"></script>
+</body>
+</html>

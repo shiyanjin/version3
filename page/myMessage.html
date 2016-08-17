@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>我的信息</title>
+    <link type="text/css" rel="stylesheet" href="../css/myMessage.css">
+    <link type="text/css" rel="stylesheet" href="../dependency/bootstrap/css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="../dependency/font-awesome-4.5.0/css/font-awesome.min.css">
+    <script src="../dependency/jquery/jquery.min.js"></script>
+    <script src="../dependency/bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <!--管理系统-->
+    <div class="top" id="top">
+        <h1>中央空调管理系统</h1>
+        <ul>
+            <li><a href="deviceControlBox2.html" >设备监控</a></li>
+            <li><a href="troubleMessageFilter.html">故障信息</a></li>
+            <li><a href="administraor.html">账户管理</a></li>
+        </ul>
+        <span class="admin">admin, </span><span class="exit">退出</span>
+    </div>
+    <!--个人信息表-->
+    <div class="message-box">
+        <button type="button" data-toggle="modal"
+                data-target="#changePassword">修改密码</button>
+        <h4>基本资料</h4>
+        <table class="table">
+            <tr>
+                <th>登&nbsp&nbsp&nbsp录&nbsp&nbsp&nbsp名&nbsp&nbsp&nbsp：</th>
+                <td>jasmine</td>
+            </tr>
+            <tr>
+                <th>姓&nbsp&nbsp&nbsp&nbsp&nbsp名&nbsp&nbsp&nbsp&nbsp&nbsp：</th>
+                <td>小花</td>
+            </tr>
+            <tr>
+                <th>联&nbsp系&nbsp方&nbsp式&nbsp：</th>
+                <td>13025875843</td>
+            </tr>
+            <tr>
+                <th>上次登录时间：</th>
+                <td>今天&nbsp&nbsp14:56</td>
+            </tr>
+        </table>
+    </div>
+    <div class="modal fade" id="changePassword">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-dismiss="modal">
+                        <span>&times;</span>
+                    </button>
+                    <h4 class="modal-title">修改密码</h4>
+                </div>
+                <div class="modal-body">
+                    <label>原&nbsp&nbsp&nbsp密&nbsp&nbsp&nbsp码
+                        <input type="password" id="oldPassword" onkeyup="keyUP(event)"
+                        onchange="validate()">
+                    </label><br/>
+                    <label>新&nbsp&nbsp&nbsp密&nbsp&nbsp&nbsp码
+                        <input type="password" id="newPassword"
+                               onkeyup="keyUP(event)" onchange="validate()">
+                    </label><br/>
+                    <label>确认新密码
+                        <input type="password" id="confirmPassword"
+                               onkeyup="keyUP(event)" onchange="validate()">
+                    </label><br/>
+                    <p id="promoted"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="btn-confirm" disabled="disabled">
+                        确认
+                    </button>
+                </div>
+            </div>
+            <!--修改成功框-->
+            <div class="modify-success">
+                <i class="fa fa-check-circle"></i>密码修改成功 !
+            </div>
+        </div>
+    </div>
+    <script src="../js/changePassword.js"></script>
+    <script src="../js/modifyPasswordSuccess.js"></script>
+</body>
+</html>

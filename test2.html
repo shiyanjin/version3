@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>事件冒泡</title>
+</head>
+<body>
+    <div id="box">
+        <button type="button">btn1</button>
+        <button type="button" id="btn2">btn2</button>
+    </div>
+    <script>
+        function show(event) {
+            alert("hello world");
+            event.stopPropagation();
+        }
+        var eventUtil = {
+            addHandler:function (ele,type,handler) {
+                if(ele.addEventListener){
+                    ele.addEventListener(type,handler,false);
+                }else if(ele.attachEvent){
+                    ele.attachEvent("on"+type,handler);
+                }else{
+                    ele["on"+type] = handler;
+                }
+            },
+            removeHandler:function (ele,type,handler) {
+                if(ele.removeEventListener){
+                    ele.removeEventListener(type,handler,false);
+                }else if(ele.detachEvent){
+                    ele.detachEvent("on"+type,handler);
+                }else{
+                    ele["on"+type] = null;
+                }
+            }
+        }
+        var btn2 = document.getElementById("btn2");
+        var div = document.getElementById("box");
+        eventUtil.addHandler(btn2,"click",show);
+        eventUtil.addHandler(div,"click",show);
+    </script>
+</body>
+</html>

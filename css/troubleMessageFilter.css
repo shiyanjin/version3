@@ -1,0 +1,196 @@
+*{
+    margin:0;
+    padding:0;
+}
+html,body{
+    margin-top: 0;
+    padding-top: 0;
+    width:100%;
+    height:100%;
+    background-color: white;
+}
+.top{
+    width:100%;
+    height:60px;
+    background-color: #19acdc;
+}
+.top h1{
+    font-size: 25px;
+    font-family: 华文细黑;
+    color: white;
+    width:200px;
+    height:60px;
+    line-height: 60px;
+    margin-left: 20px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.top ul{
+    position: absolute;
+    top:30px;
+    left:300px;
+}
+.top li{
+    list-style: none;
+    float: left;
+    width:100px;
+    margin-left:50px;
+    text-align: center;
+}
+.top a:link,
+.top a:visited{
+    text-decoration: none;
+    font-size: 18px;
+    font-family: 华文细黑;
+    color: white;
+}
+.top a:hover,
+.top a:active{
+    text-decoration: none;
+    font-size: 18px;
+    font-family: 华文细黑;
+    color: yellowgreen;
+}
+.active{
+    border-bottom: 5px solid #2dcedb;
+}
+.top span{
+    color: white;
+    font-size: 15px;
+    font-family: 华文细黑;
+    position: absolute;
+    top: 40px;
+    left:1200px;
+}
+/*top end*/
+
+/*信息表*/
+.table-box{
+    width:800px;
+    height:500px;
+    margin:0 auto;
+    margin-top:60px;
+}
+.trouble-count {
+    width: 150px;
+    line-height: 37px;
+    font-size: 10px;
+    font-family: 华文中宋;
+    margin-left: 650px;
+}
+.trouble-count span{
+    color: red;
+}
+.table-bordered{
+    margin:0 auto;
+}
+.table-bordered th{
+    position: relative;
+    background-color: rgba(49, 209, 255, 0.05);
+}
+.table-bordered th,
+.table-bordered td{
+    width:230px;
+    height:40px;
+    font-size: 14px;
+    font-family: 华文细黑;
+    font-weight: bold;
+    line-height: 40px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+.table-bordered th i{
+    position: absolute;
+    top:12px;
+    left:180px;
+}
+.table-box ul{
+    margin-left:200px ;
+    width:450px;
+    height:30px;
+    line-height: 30px;
+}
+.table-box li{
+    list-style: none;
+    float: left;
+    text-align: center;
+}
+.table-box .text{
+    width:80px;
+}
+.table-box .number{
+    width:30px;
+}
+.table-box a:link,
+.table-box a:visited{
+    color: #000;
+    text-decoration: none;
+}
+.table-box a:hover,
+.table-box a:active,
+.table-box .active-page a{
+    color: #2aabd2;
+}
+.table-box .firstOrLast a{
+    color: #a2a2a2;
+}
+/*筛选框*/
+.sub-menu-name{
+    height:210px;
+    left:460px;
+}
+.sub-menu-name,.sub-menu-position{
+    width:110px;
+    border: 1px solid #a2a2a2;
+    position: absolute;
+    top:197px;
+    background-color: white;
+    display: none;
+}
+.sub-menu-name label,
+.sub-menu-position label{
+    height:30px;
+    margin-left: 5px;
+    font-weight: lighter;
+}
+.sub-menu-name label:hover,
+.sub-menu-position label:hover{
+    color: #2aabd2;
+}
+.sub-menu-name input,
+.sub-menu-position input{
+    width:20px;
+    height:20px;
+    vertical-align: middle;
+}
+.sub-menu-name span,
+.sub-menu-position span{
+    margin-left: 10px;
+}
+.sub-menu-position{
+    height:100px;
+    left:690px;
+}
+/*页码样式*/
+/*
+.pagination{
+    margin-left:220px !important;
+}
+    width:552px;
+    height:30px;
+    border: 1px solid red;
+    margin-left:140px !important;
+}
+.pagination a{
+    width:100px !important;
+}
+.pagination input{
+    width:150px !important;
+    font-size: 16px;
+    border-bottom: 1px solid #ddd;
+}
+.pagination a,
+.pagination input{
+    height:28px !important;
+    line-height: 30px !important;
+}*/

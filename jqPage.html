@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>分页</title>
+    <link type="text/css" rel="stylesheet" href="dependency/bootstrap/css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="dependency/jqPagination/jqpagination.css">
+    <script src="dependency/jquery/jquery.min.js"></script>
+    <script src="dependency/bootstrap/js/bootstrap.min.js"></script>
+    <script src="dependency/jqPagination/jquery.jqpagination.min.js"></script>
+</head>
+<body>
+    <div id="data"></div>
+    <div id="divframe">
+        <div class="loadTitle">
+            <input type="button" value="获取数据" id="btn"/>
+        </div>
+        <div id="jsonTip">
+        </div>
+        <div class="pagination" >
+            <a href="#" class="first" data-action="first">&laquo;</a>
+            <a href="#" class="previous" data-action="previous">&lsaquo;</a>
+            <input type="text" readonly="readonly" data-max-page="40" />
+            <a href="#" class="next" data-action="next">&rsaquo;</a>
+            <a href="#" class="last" data-action="last">&raquo;</a>
+        </div>
+    </div>
+    <script src="js/getJson.js"></script>
+    <script>
+       /* $("document").ready(function() {
+            $.ajax({
+                type: "POST",
+                url: "data.json",
+                dataType: "json",
+                success: function (data) {
+                    /!*getJson(data);
+                    initPageWidget(data);*!/
+                    getJsonData(data);
+                }
+           });
+        });*/
+
+</script>
+<script>
+    function getJson(data){
+        var music="<table class='table-bordered'><tr><th>序号</th>" +
+                "<th>登录名</th><th>姓名</th><th>联系方式</th>" +
+                "<th>注册时间</th><th>上次登录时间</th><th>操作</th></tr>";
+        //i表示在data中的索引位置，n表示包含的信息的对象
+        $.each(data,function(i,n){
+            //获取对象中属性为optionsValue的值
+            music+="<tr><td>"+(i+1)+"</td>";
+            music+="<td>"+n["loginName"]+"</td>";
+            music+="<td>"+n["name"]+"</td>";
+            music+="<td>"+n["telephone"]+"</td>";
+            music+="<td>"+n["registerTime"]+"</td>";
+            music+="<td>"+n["lastLogin"]+"</td>";
+            music+="<td><a href='#'>修改</a><a href='#'>删除</a><a href='#'>重置密码</a></td>";
+        });
+        music+="</table>";
+        $('#jsonTip').append(music);
+    }
+
+    function initPageWidget(data){
+        var totalCounts = data.length;
+        var pageSize = 5;
+        var max = Math.ceil(totalCounts / pageSize);
+        console.log(totalCounts+" "+max);
+        $('.pagination').jqPagination({
+            link_string : '${pageContext.request.contextPath}/widget/getForm'+'/?page={page_number}',
+            current_page: 1, //设置当前页 默认为1
+            max_page : max, //设置最大页 默认为1
+            page_string : '当前第{current_page}页,共{max_page}页'
+        });
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>账户管理</title>
+    <link type="text/css" rel="stylesheet" href="../css/administrator.css">
+    <link type="text/css" rel="stylesheet" href="../dependency/bootstrap/css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="../dependency/font-awesome-4.5.0/css/font-awesome.min.css">
+    <link type="text/css" rel="stylesheet" href="../dependency/paginator/jqPaginator.css">
+
+    <script src="../dependency/jquery/jquery.min.js"></script>
+    <script src="../dependency/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../dependency/paginator/jqPaginator.min.js"></script>
+    <script src="../dependency/paginator/jqPaginator.min.js"></script>
+    <script src="http://static.runoob.com/assets/vue/1.0.11/vue.min.js"></script>
+</head>
+<body>
+    <!--管理系统-->
+    <div class="top" id="top">
+        <h1>中央空调管理系统</h1>
+        <ul>
+            <li><a href="deviceControlBox2.html" >设备监控</a></li>
+            <li><a href="troubleMessageFilter.html">故障信息</a></li>
+            <li class="active"><a href="administraor.html">账户管理</a></li>
+        </ul>
+        <span>admin, 退出</span>
+    </div>
+    <!--用户信息表-->
+    <div class="table-box">
+        <!--新增用户按钮-->
+        <button type="button" class="btn-adduser" data-toggle="modal"
+                data-target="#adduser">新增用户</button>
+        <!--用户信息表-->
+        <div id="jsonTip">
+            <table class="table-bordered table-striped">
+                <tr>
+
+                    <th>登录名</th>
+                    <th>姓名</th>
+                    <th>联系方式</th>
+                    <th>创建时间</th>
+                    <th>上次登录时间</th>
+                    <th>操作</th>
+                </tr>
+                <tr v-for="item in items">
+                    <td>{{item.loginName}}</td>
+                    <td>{{item.name}}</td>
+                    <td>{{item.telephone}}</td>
+                    <td>{{item.registerTime}}</td>
+                    <td>{{item.lastLogin}}</td>
+                    <td>
+                        <a href='#' data-toggle='modal' data-target='#modify'
+                                onclick="modify('{{item.id}}')">修改</a>
+                        <a href="#" class="move" data-toggle="modal"
+                           data-target="#delete" onclick="deleteuser('{{item.id}}')">删除</a>
+                        <a href="#" data-toggle="modal" data-target="#resetPassword">重置密码</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <!--页码-->
+        <div id="page" class="pagination" ></div>
+    </div>
+    <!--模态框 新增用户-->
+    <div class="modal fade" id="adduser">
+        <div class="modal-dialog">
+            <div class="modal-content-add">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-dismiss="modal">
+                        <span>&times;</span>
+                    </button>
+                    <h4 class="modal-title">新增账户</h4>
+                </div>
+                <div class="modal-body">
+                    <label>登 录 名
+                        <input type="text" id="add-loginName"
+                               onkeyup="keyUP(event,'modal-content-add')">
+                    </label><br/>
+                    <label>姓&nbsp&nbsp名
+                        <input type="text" id="add-name"
+                               onkeyup="keyUP(event,'modal-content-add')">
+                    </label><br/>
+                    <label>联系方式
+                        <input type="text" id="add-telephone"
+                               onkeyup="keyUP(event,'modal-content-add')">
+                    </label><br/>
+                    <button type="button" disabled="disabled" id="add-confirm">
+                        确认
+                    </button>
+                    <p>登录初始密码默认为：123456，登录后请及时修改密码</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--修改用户信息-->
+    <div class="modal fade" id="modify">
+        <div class="modal-dialog">
+            <div class="modal-content-modify">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-dismiss="modal">
+                        <span>&times;</span>
+                    </button>
+                    <h4 class="modal-title">修改账户信息</h4>
+                </div>
+                <div class="modal-body">
+                    <label>登 录 名
+                        <input type="text" id="modify-loginName"
+                               onkeyup="keyUP(event,'modal-content-modify')">
+                    </label><br/>
+                    <label>姓&nbsp&nbsp名
+                        <input type="text" id="modify-name"
+                               onkeyup="keyUP(event,'modal-content-modify')">
+                    </label><br/>
+                    <label>联系方式
+                        <input type="text" id="modify-telephone"
+                               onkeyup="keyUP(event,'modal-content-modify')">
+                    </label><br/>
+                    <button type="button" disabled="disabled" id="modify-confirm">确认</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--模态框 删除-->
+   <div class="modal fade" id="delete">
+        <div class="modal-dialog">
+            <!--删除确认框-->
+            <div class="modal-content-delete">
+                <div class="modal-header">
+                    <h4 class="modal-title">删除用户</h4>
+                </div>
+                <div class="modal-body">
+                    确定要删除所选用户？
+                </div>
+                <div class="modal-footer">
+                    <a href="administraor.html">
+                        <button type="button" class="cancel">取&nbsp&nbsp消</button>
+                    </a>
+                    <a href="#">
+                        <button type="button" class="confirm"  id="delete-confirm">
+                            确&nbsp&nbsp认
+                        </button>
+                    </a>
+                </div>
+            </div>
+            <!--删除成功提示框-->
+            <div class="delete-success">
+                <i class="fa fa-check-circle"></i>删除成功 !
+            </div>
+        </div>
+    </div>
+    <!--重置密码-->
+    <div class="modal fade" id="resetPassword">
+        <div class="modal-dialog">
+            <!--删除确认框-->
+            <div class="modal-content-resetPassword">
+                <div class="modal-header">
+                    <h4 class="modal-title">重置密码</h4>
+                </div>
+                <div class="modal-body">
+                    确定要重置所选用户的密码？
+                </div>
+                <div class="modal-footer">
+                    <a href="administraor.html">
+                        <button type="button" class="cancel">取&nbsp&nbsp消</button>
+                    </a>
+                    <a href="#">
+                        <button type="button" class="confirm">确&nbsp&nbsp认</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/changeTop.js"></script>
+    <script src="../js/changePage.js"></script>
+    <!--top与页码样式-->
+    <script src="../js/showUserMessageTable.js"></script>
+    <!--增加用户-->
+    <script src="../js/adduser.js"></script>
+    <!--删除确认后显示删除成功-->
+    <script src="../js/deleteSuccess.js"></script>
+    <script src="../js/getJson.js"></script>
+
+    <script src="../js/modifyDeleteReset.js"></script>
+    <!--<script src="../js/changePassword.js"></script>-->
+    <script>
+        /*新增用户或修改账户信息时，输入用户名、姓名、联系方式
+        * 当所有信息输入完成后，确认按钮可用
+        * 否则，确认按钮处于禁用状态
+        */
+        function keyUP(event,className){
+            var flag = true;//是否全部输入  默认true
+            $("."+className+" .modal-body input").each(function (){
+                if($(this).val()==""){//有空输入，将flag置为false
+                    flag = false;//
+                }
+            });
+            if(flag){
+                $("."+className+" .modal-body button").attr("disabled",false);
+                $("."+className+" .modal-body button").addClass("add-confirm");
+            }else{
+                $("."+className+" .modal-body button").removeClass("add-confirm");
+                $("."+className+" .modal-body button").attr("disabled",true);
+            }
+        }
+    </script>
+</body>
+</html>
