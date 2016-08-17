@@ -6,6 +6,7 @@ function adduser(){
     var addCount = 0;
     $("#add-confirm").click(function(){
         addCount ++;
+        console.log("add");
         var id = "add"+addCount;
         var loginName = $("#add-loginName").val();
         var name = $("#add-name").val();
@@ -14,6 +15,7 @@ function adduser(){
         var registerTime = date.toLocaleDateString().replace(/\//g,"-");
         var lastLoginTime = date.toLocaleString().replace(/\//g,"-");
         var html = "<tr id='"+id+"'>";
+        console.log(html);
         html += "<td>"+loginName+"</td><td>"+name+
             "</td><td>"+telephone+"</td><td>"+registerTime+"</td>" +
             "<td>"+lastLoginTime+"</td><td>" +

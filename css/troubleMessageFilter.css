@@ -172,10 +172,10 @@ html,body{
     left:690px;
 }
 /*页码样式*/
-/*
 .pagination{
     margin-left:220px !important;
 }
+/*.pagination{
     width:552px;
     height:30px;
     border: 1px solid red;

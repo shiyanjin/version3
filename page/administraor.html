@@ -8,11 +8,7 @@
     <link type="text/css" rel="stylesheet" href="../dependency/font-awesome-4.5.0/css/font-awesome.min.css">
     <link type="text/css" rel="stylesheet" href="../dependency/paginator/jqPaginator.css">
 
-    <script src="../dependency/jquery/jquery.min.js"></script>
-    <script src="../dependency/bootstrap/js/bootstrap.min.js"></script>
-    <script src="../dependency/paginator/jqPaginator.min.js"></script>
-    <script src="../dependency/paginator/jqPaginator.min.js"></script>
-    <script src="http://static.runoob.com/assets/vue/1.0.11/vue.min.js"></script>
+
 </head>
 <body>
     <!--管理系统-->
@@ -33,8 +29,7 @@
         <!--用户信息表-->
         <div id="jsonTip">
             <table class="table-bordered table-striped">
-                <tr>
-
+                <tr id="title">
                     <th>登录名</th>
                     <th>姓名</th>
                     <th>联系方式</th>
@@ -72,11 +67,11 @@
                     <h4 class="modal-title">新增账户</h4>
                 </div>
                 <div class="modal-body">
-                    <label>登 录 名
+                    <label>登&nbsp&nbsp录&nbsp&nbsp名
                         <input type="text" id="add-loginName"
                                onkeyup="keyUP(event,'modal-content-add')">
                     </label><br/>
-                    <label>姓&nbsp&nbsp名
+                    <label>姓&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp名
                         <input type="text" id="add-name"
                                onkeyup="keyUP(event,'modal-content-add')">
                     </label><br/>
@@ -103,11 +98,11 @@
                     <h4 class="modal-title">修改账户信息</h4>
                 </div>
                 <div class="modal-body">
-                    <label>登 录 名
+                    <label>登&nbsp&nbsp录&nbsp&nbsp名
                         <input type="text" id="modify-loginName"
                                onkeyup="keyUP(event,'modal-content-modify')">
                     </label><br/>
-                    <label>姓&nbsp&nbsp名
+                    <label>姓&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp名
                         <input type="text" id="modify-name"
                                onkeyup="keyUP(event,'modal-content-modify')">
                     </label><br/>
@@ -170,6 +165,11 @@
             </div>
         </div>
     </div>
+
+    <script src="../dependency/jquery/jquery.min.js"></script>
+    <script src="../dependency/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../dependency/paginator/jqPaginator.min.js"></script>
+    <script src="../dependency/vue.js"></script>
 
     <script src="../js/changeTop.js"></script>
     <script src="../js/changePage.js"></script>
