@@ -175,6 +175,9 @@ html,body{
 .pagination{
     margin-left:220px !important;
 }
+.active{
+    border-bottom: none;
+}
 /*.pagination{
     width:552px;
     height:30px;

@@ -3,8 +3,6 @@
  */
 /*修改用户信息*/
 function modify(id){
-    //addId(id);
-    alert(id)
     $("#modify-confirm").click(function(){
         var loginName = $("#modify-loginName").val();
         var name =$("#modify-name").val();
